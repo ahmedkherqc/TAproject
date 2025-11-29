@@ -9,8 +9,10 @@ public class TestClass {
 
     @Test
 public void test() {
-        WebDriver driver = new ChromeDriver();
-
+        WebDriver driver ;
+        driver = new ChromeDriver();
+        driver.get("https://www.example.com");
+        driver.quit();
     }
 
 }
