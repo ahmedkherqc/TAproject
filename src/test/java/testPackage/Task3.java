@@ -1,42 +1,17 @@
 package testPackage;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestClass {
-    WebDriver driver ;
-    @Test // task 1
-public void test() {
+public class Task3 {
 
-        driver = new ChromeDriver();
-        driver.get("https://duckduckgo.com");
-
-        String title = driver.getTitle();
-        Assert.assertTrue(title.contains("Google"), "Title should contain Google but was: " + title);
-
-        driver.quit();
-    }
-
-    @Test // Task 2
-    public void test2() {
-
-        driver = new ChromeDriver();
-        driver.get("https://duckduckgo.com");
-
-        WebElement img = driver.findElement(By.xpath("//section[@class='header_headerLeft__rW6nD header_headerSection___XMRI']//img"));
-        Assert.assertTrue(img.isDisplayed(), "Image should be displayed");
-        System.out.println("Image is displayed: " + img.isDisplayed());
-        driver.quit();
-    }
-    @Test // Task 3
-    public void test3() {
-
+    @Test
+    public void test() {
+        WebDriver driver ;
         driver = new ChromeDriver();
         driver.get("https://duckduckgo.com");
 
