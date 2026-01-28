@@ -1,35 +1,28 @@
 package testPackage;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-public class Task3 {
-
+public class task5 {
     @Test
-    public void test() {
+    public void test5(){
         WebDriver driver ;
         driver = new ChromeDriver();
-        driver.get("https://duckduckgo.com");
-
+        driver.navigate().to("https://duckduckgo.com");
         WebElement searchBox = driver.findElement(By.id("searchbox_input"));
-        searchBox.sendKeys("Selenium WebDriver");
+        searchBox.sendKeys("Cucumber IO");
         WebElement searchButton = driver.findElement(By.cssSelector("button[type='submit']"));
         searchButton.click();
-        By firstResult = By.cssSelector("a[href='https://www.selenium.dev/documentation/webdriver/']");
+        WebElement secondResult = driver.findElement(By.xpath("(//a[@class='result__a'])[2]"));
 
-        WebElement firstLink=driver.findElement(firstResult);
-
-        String href = firstLink.getAttribute("href");
-        Assert.assertEquals(href, "https://www.selenium.dev/documentation/webdriver/");
-
-        System.out.println("First link href: " + href);
-
+        String href = secondResult.getAttribute("href");
+        Assert.assertTrue(href.contains("https://www.linkedin.com"),
+                "Expected LinkedIn URL in second result but was: " + href);
         driver.quit();
     }
+
 
 
 }
