@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -52,6 +51,8 @@ public void test() {
         Assert.assertEquals(href, "https://www.selenium.dev/documentation/webdriver/");
 
         System.out.println("First link href: " + href);
+
+       // By nameTectBox= By.id("searchbox_input");
 
         driver.quit();
     }

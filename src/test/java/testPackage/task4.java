@@ -1,3 +1,5 @@
+package testPackage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -5,9 +7,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Task4
+public class task4
 {
-     ;
+
     @Test
     public void test4() {
 
@@ -22,11 +24,11 @@ public class Task4
 
         By forthResult = By.xpath("//span[text()='TestNG Tutorial']");
 
-        String text = driver.findElement(forthResult).getText();
+        String forthResult_text = driver.findElement(forthResult).getText();
       //  wait.until(d -> d.findElement(forthResult));
-        Assert.assertEquals(text, "TestNG Tutorial","Fourth result text should be 'TestNG Tutorial'");
+        Assert.assertEquals(forthResult_text, "TestNG Tutorial","Fourth result text should be 'TestNG Tutorial'");
 
-        System.out.println("Fourth result text: " + driver.findElement(forthResult));
+        System.out.println("Fourth result text is: " + forthResult_text);
 
         driver.quit();
 
