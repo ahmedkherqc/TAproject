@@ -5,6 +5,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
+
+
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 /*
 
 #6
@@ -19,8 +25,10 @@ public class task6 {
     @Test
     public void test6()
     {
+
         //Open Google Chrome
         WebDriver driver=new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
         //Navigate to [http://the-internet.herokuapp.com/checkboxes]
         driver.navigate().to("http://the-internet.herokuapp.com/checkboxes");
@@ -36,6 +44,16 @@ public class task6 {
         Assert.assertTrue(isFirstCheckboxSelected && isSecondCheckboxSelected,"Both checkboxes should be selected. the first is selected: "
                 +isFirstCheckboxSelected+", the second is selected: "+isSecondCheckboxSelected);
         //Close Google Chrome
+/*
+        driver.findElement(By.name("submit")).click();
+        driver.findElement(By.id("submit")).click();
+        driver.findElement(By.tagName("body")).click();
+        driver.findElement(By.className("header")).click();
+
+
+ */
+
+
         driver.quit();
 
     }
